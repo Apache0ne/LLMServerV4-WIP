@@ -15,17 +15,21 @@ LLM Server is a flexible and extensible platform for interacting with various La
 ## Installation
 
 1. Clone the repository:
-
-git clone https://github.com/yourusername/llm-server.git cd llm-server
-
+   \`\`\`bash
+   git clone https://github.com/Apache0ne/LLMServerV4-WIP.git
+   cd LLMServerV4-WIP
+   \`\`\`
 
 2. Create a virtual environment and activate it:
-python -m venv venv source venv/bin/activate # On Windows, use venv\Scripts\activate
-
+   \`\`\`bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   \`\`\`
 
 3. Install the required dependencies:
-pip install -r requirements.txt
-
+   \`\`\`bash
+   pip install -r requirements.txt
+   \`\`\`
 
 4. Set up your configuration:
    - Copy `config/services.yaml.example` to `config/services.yaml`
@@ -36,12 +40,14 @@ pip install -r requirements.txt
 ### Starting the Server
 
 Run the following command to start both the API server and the console interface:
+\`\`\`bash
 python main.py
-
+\`\`\`
 
 To start only the API server without the console interface:
+\`\`\`bash
 python main.py --no-console
-
+\`\`\`
 
 ### API Endpoints
 
@@ -54,11 +60,9 @@ python main.py --no-console
 - `POST /game_turn`: Take a turn in an active game
 - `POST /execute_plugin`: Execute a plugin with optional arguments
 
-Refer to the API documentation for detailed usage of each endpoint.
-
 ### Console Commands
 
-In the console interface, you can use the following commands:
+In the console interface, use the following commands:
 
 - `help`: Show available commands
 - `create_context`: Create a new conversation context
