@@ -1,4 +1,4 @@
-# LLM Server
+# LLM Server (WIP)(Does not work) 
 
 LLM Server is a flexible and extensible platform for interacting with various Large Language Models (LLMs) through a unified interface. It supports multiple LLM services, provides both API and console interfaces, and includes a simple game engine for text-based adventures.
 
