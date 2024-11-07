@@ -11,6 +11,7 @@ from storage.tinydb_storage import TinyDBStorage
 from config.config_loader import load_config, get_service_config, get_logging_config
 from utils.logger import setup_logging, get_logger
 from utils.error_handler import setup_global_error_handler
+from utils.async_utils import run_sync_or_async
 
 # Load environment variables
 load_dotenv()
@@ -95,7 +96,7 @@ async def send_prompt(name: str, prompt: str):
 async def initialize_services():
     for service_name, client in service_clients.items():
         try:
-            models = await client.list_models()
+            models = await run_sync_or_async(client.list_models)
             logger.info(f"Successfully connected to {service_name}. Available models: {len(models)}")
         except Exception as e:
             logger.error(f"Could not connect to {service_name} server. Error: {str(e)}")

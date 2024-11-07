@@ -87,6 +87,9 @@ def select_model(service):
         print("\nAvailable Cerebras Models:")
         for idx, model in enumerate(models, start=1):
             print(f"{idx}. {model}")
+    else:
+        print(f"[Error] Unsupported service: {service}")
+        return None
     
     while True:
         choice = input("Enter the model number: ")

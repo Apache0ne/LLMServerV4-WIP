@@ -87,10 +87,11 @@ def execute_plugin():
     if not plugin_name:
         return jsonify({"error": "Missing plugin name"}), 400
     
-    result = plugin_manager.execute_plugin(plugin_name, *plugin_args, **plugin_kwargs)
-    if result is None:
-        return jsonify({"error": f"Failed to execute plugin {plugin_name}"}), 500
-    return jsonify({"result": result})
+    try:
+        result = plugin_manager.execute_plugin(plugin_name, *plugin_args, **plugin_kwargs)
+        return jsonify({"result": result})
+    except Exception as e:
+        return jsonify({"error": f"Failed to execute plugin {plugin_name}: {str(e)}"}), 500
 
 async def run_server():
     from hypercorn.asyncio import serve

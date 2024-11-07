@@ -23,7 +23,7 @@ class CLI:
         self.style = Style.from_dict({
             'prompt': '#ansibrightcyan bold',
             'output': '#ansibrightgreen',
-            'error_message': '#ansired bold',  # Changed 'error' to 'error_message'
+            'error': '#ansired bold', 
         })
 
 
